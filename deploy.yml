@@ -9,7 +9,7 @@
 
     - name: Copy Website Files
       copy:
-        src: "{{ ansible_env.PWD }}/index.html"
+        src: "/var/lib/jenkins/workspace/deploy_using_ansible"
         dest: /var/www/html/index.html
 
     - name: Restart Apache
