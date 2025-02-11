@@ -9,7 +9,7 @@
 
     - name: Copy Website Files
       copy:
-        src: "/var/lib/jenkins/workspace/deploy_using_ansible"
+        src: "/var/lib/jenkins/workspace/deploy_using_ansible/index.html"
         dest: /var/www/html/index.html
 
     - name: Restart Apache
