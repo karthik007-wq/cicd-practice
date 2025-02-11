@@ -1,0 +1,18 @@
+---
+- hosts: nodes
+  become: yes
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Copy Website Files
+      copy:
+        src: /var/lib/jenkins/workspace/yourproject/index.html
+        dest: /var/www/html/index.html
+
+    - name: Restart Apache
+      systemd:
+        name: apache2
+        state: restarted
